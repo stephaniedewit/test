@@ -1,0 +1,35 @@
+---
+title: "workflows_les_6"
+author: "Stephanie de Wit"
+date: '2022-04-29'
+output: html_document
+---
+
+```{r setup, include=FALSE}
+
+```
+
+Voeg een (zwevende) inhoudsopgave toe onder 'output:' in de YAML header met:
+
+output:
+  html_document:
+    toc: true
+    toc_float: true
+
+Geef aan of er alleen kopjes of ook sub-kopjes e.d. in de inhoudsopgave moeten komen met: 
+
+toc_depth: 1 - 6 
+
+Voeg {.tabset} toe aan een kopje om ervoor te zorgen dat sub-kopjes verschijnen als tabjes.
+
+## Kopje {.tabset}
+
+### Sub-kopje
+
+### Sub-kopje 2
+
+Geen CSS style toepassen maar een ingebouwd RMarkdown thema:
+
+output:
+  html_document:
+    theme: united
