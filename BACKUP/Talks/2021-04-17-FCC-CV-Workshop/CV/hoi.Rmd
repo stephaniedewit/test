@@ -1,0 +1,20 @@
+---
+title: "Untitled"
+author: "Stephanie de Wit"
+date: '2022-04-27'
+output: 
+  pdf_document:
+    latex_engine: pdflatex
+    template: "style.tex"
+geometry: margin=1in
+---
+
+\cvskill{English}{5}
+
+\divider
+
+\cvskill{Spanish}{4}
+
+\divider
+
+\cvskill{German}{3}
