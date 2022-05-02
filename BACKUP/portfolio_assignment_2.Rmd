@@ -25,4 +25,3 @@ dir_tree(path="C:/Users/steph/DSFB2/workflows_lessen")
 ```{r projecticum folder tree, fig.cap="Figuur X: Folder structuur voor de DSFB2 Regenworm projecticum werkomgeving."}
 dir_tree(path="C:/Users/steph/DSFB2/projecticum_regenworm")
 ```
-
