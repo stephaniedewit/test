@@ -16,11 +16,6 @@ h1 {
   color: gray;
 }
 
-/* Applies to all elements with <... class="h2"> specified. */
-.h2 {
-  color: red; 
-}
-
 /* Applies to all elements with <... class="rainbow-box"> specified. */
 .rainbow-box {
   background-color: rgb(255,255,255);
