@@ -2,9 +2,12 @@
 title: "workflows_les_5"
 author: "Stephanie de Wit"
 date: '2022-04-28'
-output: html_document
-bibliography: mijn_bibliotheek.bib
+output:
+  html_document:
+    css: "style.css"
 ---
+
+bibliography: mijn_bibliotheek.bib
 
 ```{r setup, include=FALSE}
 library(tidyverse)
@@ -14,7 +17,9 @@ library(tidyverse)
 
 "knitr::spin("name_of_your_file.R", knit = FALSE, format = "Rmd") to turn a script into an .Rmd."
 
+<h1>
 ## Including images
+</h1>
 
 __1. In an R-chunk call__
 
@@ -59,7 +64,9 @@ Volgens:
 
 Dit is HTML en wordt door R herkend, zonder chunk, indien je knit naar een html_document.
 
+<h1>
 ## Graphs
+</h1>
 
 Chunk opties Volgens:
 
@@ -157,7 +164,9 @@ bp <- data %>%
 bp + scale_fill_brewer(palette = "Dark2")
 ```
 
-## Tables
+<h1>
+## Tabels
+</h1>
 
 Tibbles knitten tot tabellen met knitr::kable()...
 
@@ -210,7 +219,7 @@ kbl(data_for_table) %>%
 | Header      | Title       |
 | Paragraph   | Text        |
 
-__Exercise 5.2__
+__Exercise 5.2 & 5.3__
 
 Mijn vijf favoriete Pokémon karakters:
 
@@ -222,11 +231,36 @@ Mijn vijf favoriete Pokémon karakters:
 #Characteristics tabel:
 pokemon <- tibble(Pokémon=c("__Mewtwo__","Ponyta","Eevee","Ditto","Snorlax"),Characteristics=c("Mewtwo is a Psychic-type egendary Pokémon introduced in Generation I. It displays telekinesis to fly and block special abilities and utilizes telepathy to communicate with humans.","Ponyta is a Fire-type Pokémon introduced in Generation I. It hooves are harder than diamond and it can heal wounded or poisoned allies.","Eevee is a Normal-type Pokémon introduced in Generation I. It's the Pokémon with the highes number of evolution possibilities. The Z-move Extreme Evoboost is Eevee's signature move.","Ditto is a Normal-type Pokémon introduced in Generation I. It's capable of transforming into anything and has the unique ability to breed with any other Pokémon.","Snorlax is a Normal-type Pokémon introduced in Generation I. It will sleep all day until it's hungry and is believed to release a kind of energy that will help regrow the plants it ate."))
 
-pokemon %>% kbl() %>% column_spec(1,color=c("gray","orange","brown","purple","darkgreen")) %>% kable_classic() %>% footnote(general="Information about characteristics is derived from Pokémon Wiki [@PokemonWiki].")
-
-library(rbbt)
-bbt_update_bib("/mijn_bibliotheek.bib")
+pokemon %>% kbl() %>% column_spec(1,color=c("gray","orange","brown","purple","darkgreen")) %>% kable_classic() %>% footnote(general="Information about characteristics is derived from Pokémon Wiki*.")
 ```
+
+Linken optie 1:
+
+[*](https://pokemon.fandom.com/wiki/Pok%C3%A9mon_Wiki)
+
+Linken optie 2:
+
+<html>
+<head>
+<style>
+a {
+  color: blue;
+}
+a:link {
+  text-decoration: none;
+}
+/* mouse over link */
+a:hover {
+  color: lightgreen;
+}
+</style>
+</head>
+<body>
+
+<p><b><a href="https://pokemon.fandom.com/wiki/Pok%C3%A9mon_Wiki" target="_blank">*</a></b></p>
+
+</body>
+</html>
 
 ```{r Pokémon plot, fig.cap="Rating of my favorite Pokémon on a 1-10 scale."}
 #Rating plot:
@@ -241,6 +275,9 @@ pokemon %>% ggplot(aes(x=Pokémon,y=Rating)) +
   labs(title="Pokémon ratings")
 ```
 
+<div class="rainbow-box">
+"Charmanders are red, Squirtles are blue. If you were a pokémon. I'd choose you. Your smile is stronger than a hyperbeam. Like Jesse and James we'd make the perfect team. I'll stay by your side like Pikachu to Ash, and I'll love you more than a level 80 Rapidash. You're more legendary than a Zapdos, Entei or Mew. Out all of 450, I'd choose you!" - Unknown
+</div>
 
 
 
@@ -386,4 +423,4 @@ Referenties updaten naar .bib file met:
 
 library(rbbt)
 
-bbt_update_bib("./Rmd/Mijn Bibliotheek.bib")
+bbt_update_bib("./Rmd/mijn_bibliotheek.bib")
