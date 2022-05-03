@@ -5,9 +5,8 @@ date: '2022-04-28'
 output:
   html_document:
     css: "style.css"
+#bibliography: "'r rbbt::bbt_write_bib(”bibliography.json”, overwrite = TRUE)`"
 ---
-
-bibliography: mijn_bibliotheek.bib
 
 ```{r setup, include=FALSE}
 library(tidyverse)
@@ -405,22 +404,13 @@ Een footnote van meerdere regels toevoegen met '[^bignote]' achter je tekst en:
 
 ...'
 
-__5.7.2 Using a reference manager__
+## Using Zotero reference manager
 
-Zotero
+```{r, eval=FALSE}
+devtools::install_github("paleolimbot/rbbt")
+```
 
 __Exercise 5.4__
+Test citaat 1: @larsenCancerCellsUse2022
 
-...
-.....
-.......
-
-Smoke weed everyday [@pattersonOmicsPotentialHerbicideResistant2019]
-
-Smoke weed EVERYday [@hasanBioherbicidesEcoFriendlyTool2021]
-
-Referenties updaten naar .bib file met:
-
-library(rbbt)
-
-bbt_update_bib("./Rmd/mijn_bibliotheek.bib")
+Test citaat 2: @ihamaFatalPropellerInjuries2009
